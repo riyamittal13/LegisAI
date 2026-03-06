@@ -11,9 +11,14 @@ st.write("Analyze stakeholder sentiment and opinions on legislative discussions.
 # Load AI models
 sentiment_pipeline = pipeline("sentiment-analysis", framework="pt")
 
+# Get HF token from Streamlit secrets
+HF_API_TOKEN = st.secrets["HF_API_TOKEN"]
+
+# Load summarizer using HF API token
 summarizer = pipeline(
     "summarization",
     model="sshleifer/distilbart-cnn-12-6",
+    use_auth_token=HF_API_TOKEN,
     framework="pt"
 )
 
