@@ -4,3 +4,5 @@ matplotlib
 transformers
 torch
 wordcloud
+transformers==4.37.2
+sentencepiece
